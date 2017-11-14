@@ -1,0 +1,40 @@
+@media (max-width: 992px) {
+
+}
+@media (max-width: 480px) {
+    .zabatnyNavbar .navbar-brand img{
+        width: 160px;
+        margin-top: 5px;
+    }
+    .zabatnyNavbar .navbar-nav {
+        background-color: #e8266f;
+    }
+    .zabatnyNavbar .navbar-nav li a{
+        color: #ffffff;
+    }
+    .zabatnyNavbar .navbar-nav li {
+        margin-right: 0;
+    }
+    .zabatnyNavbar .navbar-nav li.active a{
+        color: #e8266f;
+        background-color: #ffffff;
+    }
+    .pageHeader_title {
+        padding: 55px 0;
+        margin-top: 0;
+    }
+    .videoSection p {
+        padding: 25px;
+    }
+    .zabatnyTeam p {
+        padding: 0;
+    }
+    .contactMap {
+        display: none;
+    }
+    .locationMeta {
+        left: 15px;
+        margin-left: 0;
+        width: 125px;
+    }
+}

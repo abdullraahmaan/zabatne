@@ -1,1 +1,175 @@
+<html ng-app="zabatny">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Zabatny</title>
+    <link rel="icon" ng-href="assets/imgs/favicon.png" type="image/png"/>
+    <link type="text/css" ng-href="assets/css/angular-material.min.css" rel="stylesheet">
+    <link type="text/css" ng-href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link ng-href="assets/css/animate.css" rel="stylesheet">
+    <link ng-href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link ng-href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link ng-href="assets/css/responsive.css" rel="stylesheet" type="text/css">
 
+    <base href="/">
+</head>
+<body ng-controller="zabatnyC">
+
+<div class="loader pageLoader wow tada text-center" ng-show="pageLoader" style="width: 100%;
+    text-align: center;
+    padding: 50px;
+    position: absolute;
+    top:30%;
+    margin:0 auto;
+   overflow: hidden;">
+    <img src="assets/imgs/zabatne-loader-animated.gif" style="margin:0 auto;" >
+
+</div>
+
+<div class="pageContent" ng-show="pageContent" style="display: none">
+    <div id="top"></div>
+    <nav  class="navbar navbar-fixed-top zabatnyNavbar">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="assets/imgs/logo.png"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ui-sref-active="active">
+                        <a ui-sref=".home" href="javascript:void(0)" onclick="showItem(event);" >Home</a> 
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref=".about" href="javascript:void(0)" onclick="showItem(event);" >About</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref=".merchant" href="javascript:void(0)" onclick="showItem(event);" >Business</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref=".contact" href="javascript:void(0)" onclick="showItem(event);"  >Contact</a>
+                    </li>
+                    <li class="soft-scroll">
+                        <a class="soft-scroll" href="#footer-Section">Download</a>
+                    </li>
+                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid contentWrapper">
+        <ui-view></ui-view>
+    </div>
+    <footer id="footer-Section">
+        <div class="footer-top-layout">
+            <div class="container">
+                <div class="row">
+
+                    <div class=" col-lg-12">
+                        <div class="col-sm-4">
+                            <div class="footer-col-item">
+                                <div class="item-contact">
+                                    <a ui-sref=".home">Home</a>
+                                    <a ui-sref=".about">About</a>
+                                    <a ui-sref=".faq">FAQs</a>
+                                    <a href="">Site Map</a>
+                                    <a ui-sref=".terms">Terms and conditions</a>
+                                    <a ui-sref=".contact">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="footer-col-item">
+                                <h5>Follow Us At</h5>
+                                <div class="center-block">
+                                    <a href="#"><i id="social-fb" class="fa fa-facebook fa-lg social"></i></a>
+                                    <a href="#"><i id="social-tw" class="fa fa-twitter fa-lg social"></i></a>
+                                    <a href="#"><i id="social-gp" class="fa fa-youtube fa-lg social"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="footer-col-item">
+                                <h5>You can download the app</h5>
+
+                                <a href="#" class="mobileSection_btn">
+                        <img src="assets/imgs/icons/googlePlay.png">
+                    </a>
+                    <a href="#" class="mobileSection_btn">
+                       <img src="assets/imgs/icons/appStore.png">
+                    </a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-layout">
+            <div class="copyright-tag">©2017 Brought to you by Graphic hex</div>
+        </div>
+    </footer>
+
+</div>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+<script src="assets/js/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js" 
+        type="text/javascript"></script>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-aria.min.js"></script>
+
+<script src="assets/js/ui-bootstrap-tpls-0.3.0.min.js"></script>
+
+<script src="assets/js/angular-ui-router.min.js"></script>
+<script src="assets/js/angular-animate.min.js"></script>
+<script src="assets/js/angular-material.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/routes.js"></script>
+<script>
+/* Soft scroll */
+$(function() {
+    $('.soft-scroll a[href^="#"], a[href^="#"].soft-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        var href = $anchor.attr('href');
+        try {
+            var elem = $(href);
+            if(elem.length) {
+                $('html, body').stop().animate({
+                    scrollTop: elem.offset().top
+                }, 1000);
+
+                event.preventDefault();
+            }
+        }
+        catch(err) {}
+    });
+});
+
+</script>
+<script type="text/javascript">
+    function showItem(e)
+{
+    e = e || window.event;
+    scroll(0,0);
+}
+</script>
+
+
+
+</body>
+</html>
